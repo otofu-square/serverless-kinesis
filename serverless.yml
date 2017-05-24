@@ -39,20 +39,20 @@ package:
 
 functions:
   producer:
-    handler: producer.execute
+    handler: src/producer.execute
     events:
       - http:
           path: /webhook
           method: post
   consumer:
-    handler: consumer.execute
+    handler: src/consumer.execute
     events:
       - stream:
           type: kinesis
           arn:
             Fn::GetAtt:
-                - ServerlessKinesisStream
-                - Arn
+              - ServerlessKinesisStream
+              - Arn
           batchSize: 10
           startingPosition: LATEST
 
