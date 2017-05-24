@@ -24,6 +24,7 @@ provider:
         - kinesis:PutRecord
         - kinesis:ListStreams
         - kinesis:GetRecords
+        - kinesis:GetShardIterator
       Resource: "arn:aws:kinesis:${self:provider.region}:*:stream/${self:provider.stage}-*"
 
 package:
@@ -39,6 +40,18 @@ functions:
       - http:
           path: /webhook
           method: post
+
+  consumer:
+    handler: consumer.execute
+    events:
+      - stream:
+          type: kinesis
+          arn:
+            Fn::GetAtt:
+                - ServerlessKinesisStream
+                - Arn
+          batchSize: 10
+          startingPosition: LATEST
 
 resources:
   Resources:
