@@ -2,5 +2,13 @@
   "name": "serverless-kinesis",
   "version": "0.0.1",
   "repository": "ssh://git@github.com/otofu-square/serverless-kinesis.git",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-plugin-immutable": "^1.0.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1"
+  }
 }
