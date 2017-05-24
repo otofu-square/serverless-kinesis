@@ -1,18 +1,19 @@
-"use strict";
+const AWS = require('aws-sdk');
 
-const AWS = require("aws-sdk");
 const kinesis = new AWS.Kinesis();
 
-const streamName = "dev-serverless-kinesis-streams";
+const StreamName = 'dev-serverless-kinesis-streams';
+
 const extractUserId = event => JSON.parse(event.body).events[0].source.userId;
 
+// eslint-disable-next-line immutable/no-mutation
 module.exports.execute = (event, context, callback) => {
   console.log(event.body);
 
   const params = {
-    StreamName: streamName,
+    StreamName,
     PartitionKey: extractUserId(event),
-    Data: event.body
+    Data: event.body,
   };
 
   kinesis.putRecord(params, (err, data) => {
