@@ -1,13 +1,24 @@
 "use strict";
 
+const AWS = require("aws-sdk");
+const kinesis = new AWS.Kinesis();
+
+const streamName = "dev-serverless-kinesis-streams";
+const extractUserId = event => JSON.parse(event.body).events[0].source.userId;
+
 module.exports.execute = (event, context, callback) => {
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: "This is producer",
-      input: event
-    })
+  console.log(event.body);
+
+  const params = {
+    StreamName: streamName,
+    PartitionKey: extractUserId(event),
+    Data: event.body
   };
 
-  callback(null, response);
+  kinesis.putRecord(params, (err, data) => {
+    if (err) callback(err);
+    console.log(data);
+  });
+
+  callback(null, { statusCode: 200 });
 };
