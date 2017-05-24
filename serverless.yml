@@ -3,10 +3,7 @@ service: serverless-kinesis
 provider:
   name: aws
   runtime: nodejs6.10
-
-  stage: dev
   region: ap-northeast-1
-
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -17,7 +14,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.stage}-*"
+      Resource: arn:aws:dynamodb:${self:provider.region}:*:table/${env:STAGE}-*
     - Effect: Allow
       Action:
         - kinesis:DescribeStream
@@ -25,7 +22,7 @@ provider:
         - kinesis:ListStreams
         - kinesis:GetRecords
         - kinesis:GetShardIterator
-      Resource: "arn:aws:kinesis:${self:provider.region}:*:stream/${self:provider.stage}-*"
+      Resource: arn:aws:kinesis:${self:provider.region}:*:stream/${env:STAGE}-*
 
 package:
   exclude:
@@ -40,12 +37,16 @@ package:
 functions:
   producer:
     handler: src/producer.execute
+    environment:
+      STAGE: ${env:STAGE}
     events:
       - http:
           path: /webhook
           method: post
   consumer:
     handler: src/consumer.execute
+    environment:
+      STAGE: ${env:STAGE}
     events:
       - stream:
           type: kinesis
@@ -61,7 +62,7 @@ resources:
     ServerlessKinesisStream:
       Type: AWS::Kinesis::Stream
       Properties:
-        Name: "${self:provider.stage}-serverless-kinesis-streams"
+        Name: ${env:STAGE}-serverless-kinesis-streams
         ShardCount: 1
     ServerlessDynamoDbTable:
       Type: AWS::DynamoDB::Table
@@ -77,4 +78,4 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: "${self:provider.stage}-serverless-kinesis-dynamodb"
+        TableName: ${env:STAGE}-serverless-kinesis-dynamodb

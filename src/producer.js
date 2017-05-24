@@ -2,7 +2,7 @@ const AWS = require('aws-sdk');
 
 const kinesis = new AWS.Kinesis();
 
-const StreamName = 'dev-serverless-kinesis-streams';
+const StreamName = `${process.env.STAGE}-serverless-kinesis-streams`;
 
 const extractUserId = event => JSON.parse(event.body).events[0].source.userId;
 

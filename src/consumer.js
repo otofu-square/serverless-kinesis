@@ -2,7 +2,7 @@ const AWS = require('aws-sdk');
 
 const dynamodb = new AWS.DynamoDB();
 
-const TableName = 'dev-serverless-kinesis-dynamodb';
+const TableName = `${process.env.STAGE}-serverless-kinesis-dynamodb`;
 
 const extractParams = lineEventObject => ({
   userId: lineEventObject.events[0].source.userId,
