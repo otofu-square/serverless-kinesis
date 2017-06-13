@@ -2,6 +2,20 @@
 # yarn lockfile v1
 
 
+"@types/aws-lambda@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-0.0.12.tgz#bbd36d541e33de1126749fd1822116a9f5eec38e"
+
+"@types/aws-sdk@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@types/aws-sdk/-/aws-sdk-2.7.0.tgz#83588b3d14ebdca1d4ce5e023387577568ce82f3"
+  dependencies:
+    aws-sdk "*"
+
+"@types/node@^7.0.31":
+  version "7.0.31"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.31.tgz#80ea4d175599b2a00149c29a10a4eb2dff592e86"
+
 acorn-jsx@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-3.0.1.tgz#afdf9488fb1ecefc8348f6fb22f464e32a58b36b"
@@ -76,7 +90,7 @@ ast-types-flow@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/ast-types-flow/-/ast-types-flow-0.0.7.tgz#f70b735c6bca1a5c9c22d982c3e39e7feba3bdad"
 
-aws-sdk@^2.56.0:
+aws-sdk@*, aws-sdk@^2.56.0:
   version "2.68.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.68.0.tgz#9bad3135b31fa82be72a5985189a37aee70c6940"
   dependencies:

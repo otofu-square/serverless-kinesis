@@ -4,6 +4,9 @@
   "repository": "ssh://git@github.com/otofu-square/serverless-kinesis.git",
   "license": "MIT",
   "devDependencies": {
+    "@types/aws-lambda": "^0.0.12",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/node": "^7.0.31",
     "aws-sdk": "^2.56.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
