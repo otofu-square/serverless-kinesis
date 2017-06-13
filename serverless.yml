@@ -36,7 +36,7 @@ package:
 
 functions:
   producer:
-    handler: src/producer.execute
+    handler: producer.execute
     environment:
       STAGE: ${env:STAGE}
     events:
@@ -44,7 +44,7 @@ functions:
           path: /webhook
           method: post
   consumer:
-    handler: src/consumer.execute
+    handler: consumer.execute
     environment:
       STAGE: ${env:STAGE}
     events:
@@ -79,3 +79,6 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${env:STAGE}-serverless-kinesis-dynamodb
+
+plugins:
+  - serverless-plugin-typescript

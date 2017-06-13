@@ -1,13 +1,11 @@
-const AWS = require('aws-sdk');
+import * as AWS from 'aws-sdk';
+import { extractUserId } from './lib/jsonParser';
 
 const kinesis = new AWS.Kinesis();
 
 const StreamName = `${process.env.STAGE}-serverless-kinesis-streams`;
 
-const extractUserId = event => JSON.parse(event.body).events[0].source.userId;
-
-// eslint-disable-next-line immutable/no-mutation
-module.exports.execute = (event, context, callback) => {
+export const execute = (event, context, callback) => {
   console.log(event.body);
 
   const params = {
