@@ -4,7 +4,7 @@ const dynamodb = new AWS.DynamoDB();
 
 const TableName = `${process.env.STAGE}-serverless-kinesis-dynamodb`;
 
-export const registUnfollowedState = (userId: string) => {
+export const registUnfollowedState = (userId: string): void => {
   const params = {
     TableName,
     Item: {
@@ -18,7 +18,7 @@ export const registUnfollowedState = (userId: string) => {
   });
 };
 
-export const removeUnfollowedState = (userId: string) => {
+export const removeUnfollowedState = (userId: string): void => {
   const params = {
     TableName,
     Key: {

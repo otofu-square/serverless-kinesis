@@ -5,7 +5,7 @@ const kinesis = new AWS.Kinesis();
 
 const StreamName = `${process.env.STAGE}-serverless-kinesis-streams`;
 
-export const execute = (event, context, callback) => {
+export const execute = (event, context, callback): void => {
   console.log(event.body);
 
   const params = {
