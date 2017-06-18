@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "repository": "ssh://git@github.com/otofu-square/serverless-kinesis.git",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc --outDir .build"
+  },
   "devDependencies": {
     "@types/aws-lambda": "^0.0.12",
     "@types/aws-sdk": "^2.7.0",
