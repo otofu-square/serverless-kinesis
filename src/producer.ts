@@ -1,23 +1,23 @@
-import * as AWS from 'aws-sdk';
+import { APIGatewayEvent, Context, Callback } from 'aws-lambda';
+import { PutRecordInput, Data } from 'aws-sdk/clients/kinesis';
+
 import { extractUserId } from './lib/jsonParser';
+import { Kinesis, StreamName } from './lib/utils';
 
-const kinesis = new AWS.Kinesis();
-
-const StreamName = `${process.env.STAGE}-serverless-kinesis-streams`;
-
-export const execute = (event, context, callback): void => {
+export const execute = (
+  event: APIGatewayEvent,
+  context: Context,
+  callback: Callback,
+): void => {
   console.log(event.body);
-
-  const params = {
+  const params: PutRecordInput = {
     StreamName,
     PartitionKey: extractUserId(event),
-    Data: event.body,
+    Data: <string>event.body,
   };
-
-  kinesis.putRecord(params, (err, data) => {
+  Kinesis.putRecord(params, (err: Error, data: Data) => {
     if (err) callback(err);
     console.log(data);
   });
-
-  callback(null, { statusCode: 200 });
+  callback(undefined, { statusCode: 200 });
 };
