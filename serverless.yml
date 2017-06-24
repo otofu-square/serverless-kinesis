@@ -36,7 +36,7 @@ package:
 
 functions:
   producer:
-    handler: producer.execute
+    handler: src/producer.execute
     environment:
       STAGE: ${env:STAGE}
     events:
@@ -44,7 +44,7 @@ functions:
           path: /webhook
           method: post
   consumer:
-    handler: consumer.execute
+    handler: src/consumer.execute
     environment:
       STAGE: ${env:STAGE}
     events:
@@ -57,28 +57,7 @@ functions:
           batchSize: 10
           startingPosition: LATEST
 
-resources:
-  Resources:
-    ServerlessKinesisStream:
-      Type: AWS::Kinesis::Stream
-      Properties:
-        Name: ${env:STAGE}-serverless-kinesis-streams
-        ShardCount: 1
-    ServerlessDynamoDbTable:
-      Type: AWS::DynamoDB::Table
-      Properties:
-        AttributeDefinitions:
-          -
-            AttributeName: id
-            AttributeType: S
-        KeySchema:
-          -
-            AttributeName: id
-            KeyType: HASH
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-        TableName: ${env:STAGE}-serverless-kinesis-dynamodb
+resources: ${file(resources.yml)}
 
 plugins:
   - serverless-plugin-typescript

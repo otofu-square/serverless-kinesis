@@ -1,32 +1,30 @@
-import * as AWS from 'aws-sdk';
+import { PutItemInput, DeleteItemInput } from 'aws-sdk/clients/dynamodb';
 
-const dynamodb = new AWS.DynamoDB();
-
-const TableName = `${process.env.STAGE}-serverless-kinesis-dynamodb`;
+import { DynamoDB, TableName } from './utils';
 
 export const registUnfollowedState = (userId: string): void => {
-  const params = {
+  const params: PutItemInput = {
     TableName,
     Item: {
       id: { S: userId },
     },
   };
 
-  dynamodb.putItem(params, err => {
+  DynamoDB.putItem(params, (err: Error) => {
     if (err) console.log(err);
     console.log(`Unfollowed by userId: ${userId}`);
   });
 };
 
 export const removeUnfollowedState = (userId: string): void => {
-  const params = {
+  const params: DeleteItemInput = {
     TableName,
     Key: {
       id: { S: userId },
     },
   };
 
-  dynamodb.deleteItem(params, err => {
+  DynamoDB.deleteItem(params, (err: Error) => {
     if (err) console.log(err);
     console.log(`Followed by userId: ${userId}`);
   });

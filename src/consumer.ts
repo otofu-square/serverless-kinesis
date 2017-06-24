@@ -1,11 +1,19 @@
+import { Context, Callback } from 'aws-lambda';
+import { ListStreamsOutput, RecordList } from 'aws-sdk/clients/kinesis';
+
 import { registUnfollowedState, removeUnfollowedState } from './lib/dynamodb';
 import { extractParams } from './lib/jsonParser';
 
-export const execute = (event, context, callback): void => {
-  event.Records.forEach(record => {
+export const execute = (
+  // TODO: Change any type
+  event: any,
+  context: Context,
+  callback: Callback,
+): void => {
+  // TODO: Change any type
+  event.Records.forEach((record: any) => {
     const payload = new Buffer(record.kinesis.data, 'base64').toString('ascii');
     console.log('Decoded payload:', payload);
-
     const lineEventObject = JSON.parse(payload);
     const { userId, type } = extractParams(lineEventObject);
 
@@ -15,5 +23,5 @@ export const execute = (event, context, callback): void => {
     // see: https://devdocs.line.me/ja/#follow-event
     if (type === 'follow') removeUnfollowedState(userId);
   });
-  callback(null, { statusCode: 200 });
+  callback(undefined, { statusCode: 200 });
 };
