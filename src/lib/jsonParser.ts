@@ -1,7 +1,7 @@
 import { APIGatewayEvent } from 'aws-lambda';
 
 export const extractUserId = (event: APIGatewayEvent) =>
-  JSON.parse(<string>event.body).events[0].source.userId;
+  JSON.parse(event.body as string).events[0].source.userId;
 
 interface LineEventObject {
   events: [

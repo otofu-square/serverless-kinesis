@@ -1,4 +1,4 @@
-import { Context, Callback } from 'aws-lambda';
+import { Callback, Context } from 'aws-lambda';
 import { ListStreamsOutput, RecordList } from 'aws-sdk/clients/kinesis';
 
 import { registUnfollowedState, removeUnfollowedState } from './lib/dynamodb';
