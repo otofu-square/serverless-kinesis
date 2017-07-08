@@ -1,5 +1,5 @@
-import { APIGatewayEvent, Context, Callback } from 'aws-lambda';
-import { PutRecordInput, Data } from 'aws-sdk/clients/kinesis';
+import { APIGatewayEvent, Callback, Context } from 'aws-lambda';
+import { Data, PutRecordInput } from 'aws-sdk/clients/kinesis';
 
 import { extractUserId } from './lib/jsonParser';
 import { Kinesis, StreamName } from './lib/utils';
@@ -13,7 +13,7 @@ export const execute = (
   const params: PutRecordInput = {
     StreamName,
     PartitionKey: extractUserId(event),
-    Data: <string>event.body,
+    Data: event.body as string,
   };
   Kinesis.putRecord(params, (err: Error, data: Data) => {
     if (err) callback(err);

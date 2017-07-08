@@ -1,4 +1,4 @@
-import { PutItemInput, DeleteItemInput } from 'aws-sdk/clients/dynamodb';
+import { DeleteItemInput, PutItemInput } from 'aws-sdk/clients/dynamodb';
 
 import { DynamoDB, TableName } from './utils';
 
