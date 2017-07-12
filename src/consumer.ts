@@ -14,8 +14,7 @@ export const execute = (
   event.Records.forEach((record: any) => {
     const payload = new Buffer(record.kinesis.data, 'base64').toString('ascii');
     console.log('Decoded payload:', payload);
-    const lineEventObject = JSON.parse(payload);
-    const { userId, type } = extractParams(lineEventObject);
+    const { userId, type } = extractParams(JSON.parse(payload));
 
     // see: https://devdocs.line.me/ja/#unfollow-event
     if (type === 'unfollow') registUnfollowedState(userId);
