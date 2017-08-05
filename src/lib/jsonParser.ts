@@ -1,7 +1,7 @@
 import { APIGatewayEvent } from "aws-lambda";
 import { head, path, pipe } from "ramda";
 
-import { ILineEvent, ILineEventObject } from "./models/line";
+import { ILineEvent, ILineEventObject } from "../models/line";
 
 interface IParams {
   userId: string;
