@@ -9,7 +9,6 @@ export const execute = (
   context: Context,
   callback: Callback,
 ): void => {
-  console.log(event.body);
   const params: PutRecordInput = {
     StreamName,
     PartitionKey: extractUserId(event),
