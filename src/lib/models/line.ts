@@ -1,10 +1,10 @@
-export interface LineEvent {
+export interface ILineEvent {
   source: {
     userId: string;
   };
   type: string;
 }
 
-export interface LineEventObject {
-  events: LineEvent[];
+export interface ILineEventObject {
+  events: ILineEvent[];
 }

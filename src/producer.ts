@@ -1,8 +1,8 @@
-import { APIGatewayEvent, Callback, Context } from 'aws-lambda';
-import { Data, PutRecordInput } from 'aws-sdk/clients/kinesis';
+import { APIGatewayEvent, Callback, Context } from "aws-lambda";
+import { Data, PutRecordInput } from "aws-sdk/clients/kinesis";
 
-import { extractUserId } from './lib/jsonParser';
-import { Kinesis, StreamName } from './lib/utils';
+import { extractUserId } from "./lib/jsonParser";
+import { Kinesis, StreamName } from "./lib/utils";
 
 export const execute = (
   event: APIGatewayEvent,

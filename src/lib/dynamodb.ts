@@ -1,6 +1,6 @@
-import { DeleteItemInput, PutItemInput } from 'aws-sdk/clients/dynamodb';
+import { DeleteItemInput, PutItemInput } from "aws-sdk/clients/dynamodb";
 
-import { DynamoDB, TableName } from './utils';
+import { DynamoDB, TableName } from "./utils";
 
 export const registUnfollowedState = (userId: string): void => {
   const params: PutItemInput = {

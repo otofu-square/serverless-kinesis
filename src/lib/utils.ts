@@ -1,4 +1,4 @@
-import * as AWS from 'aws-sdk';
+import * as AWS from "aws-sdk";
 
 export const Kinesis = new AWS.Kinesis();
 export const DynamoDB = new AWS.DynamoDB();
