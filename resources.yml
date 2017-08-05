@@ -3,7 +3,7 @@ Resources:
   ServerlessKinesisStream:
     Type: AWS::Kinesis::Stream
     Properties:
-      Name: ${env:STAGE}-serverless-kinesis-streams
+      Name: ${self:custom.currentStage}-serverless-kinesis-streams
       ShardCount: 1
   ServerlessDynamoDbTable:
     Type: AWS::DynamoDB::Table
@@ -19,4 +19,4 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 1
         WriteCapacityUnits: 1
-      TableName: ${env:STAGE}-serverless-kinesis-dynamodb
+      TableName: ${self:custom.currentStage}-serverless-kinesis-dynamodb

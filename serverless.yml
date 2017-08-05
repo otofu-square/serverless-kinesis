@@ -4,6 +4,7 @@ provider:
   name: aws
   runtime: nodejs6.10
   region: ap-northeast-1
+  stage: dev
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -24,21 +25,22 @@ provider:
         - kinesis:GetShardIterator
       Resource: arn:aws:kinesis:${self:provider.region}:*:stream/${env:STAGE}-*
 
+custom:
+  currentStage: ${opt:stage, self:provider.stage}
+
 package:
   exclude:
     - README.md
     - .envrc
     - .envrc.skeleton
     - .eslintrc.js
-    - package.json
-    - node_modules/**
     - yarn.lock
 
 functions:
   producer:
     handler: src/producer.execute
     environment:
-      STAGE: ${env:STAGE}
+      STAGE: ${self:custom.currentStage}
     events:
       - http:
           path: /webhook
@@ -46,7 +48,7 @@ functions:
   consumer:
     handler: src/consumer.execute
     environment:
-      STAGE: ${env:STAGE}
+      STAGE: ${self:custom.currentStage}
     events:
       - stream:
           type: kinesis
