@@ -14,5 +14,8 @@
     "serverless-plugin-typescript": "0.5.0",
     "tslint": "^5.5.0",
     "tslint-config-prettier": "^1.1.0"
+  },
+  "dependencies": {
+    "ramda": "^0.24.1"
   }
 }
