@@ -22,6 +22,10 @@
   version "7.0.34"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.34.tgz#eed5c95291a9dddff6b9f5a72ca342b1e72f0ba2"
 
+"@types/ramda@^0.24.6":
+  version "0.24.6"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.24.6.tgz#b4a73b3d0468de5fbdffe8d372a83c3d728ca643"
+
 agent-base@2:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-2.1.1.tgz#d6de10d5af6132d5bd692427d46fc538539094c7"
