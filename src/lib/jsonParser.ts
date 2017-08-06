@@ -1,14 +1,14 @@
 import { APIGatewayEvent } from "aws-lambda";
 import { head, path, pipe } from "ramda";
 
-import { ILineEvent, ILineEventObject } from "../models/line";
+import { ILineWebhookEvents } from "../models/line";
 
 interface IParams {
   userId: string;
   type: string;
 }
 
-export const extractLineEvent: (_: APIGatewayEvent) => any = pipe(
+export const extractLineEvent: (_: APIGatewayEvent) => Line.WebhookEvent = pipe(
   path(["body"]),
   JSON.parse,
   path(["events"]),
