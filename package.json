@@ -4,16 +4,20 @@
   "repository": "ssh://git@github.com/otofu-square/serverless-kinesis.git",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --outDir .build"
+    "build": "tsc --outDir .build",
+    "test": "jest"
   },
   "devDependencies": {
     "@line/bot-sdk": "^2.0.0",
     "@types/aws-lambda": "^0.0.12",
+    "@types/jest": "^20.0.6",
     "@types/node": "^7.0.31",
     "@types/ramda": "^0.24.6",
     "aws-sdk": "^2.56.0",
+    "jest": "^20.0.4",
     "serverless": "^1.16.0",
     "serverless-plugin-typescript": "^1.0.0",
+    "ts-jest": "^20.0.9",
     "tslint": "^5.5.0",
     "tslint-config-prettier": "^1.1.0"
   },

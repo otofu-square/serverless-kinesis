@@ -1,0 +1,8 @@
+{
+  "transform": {
+    ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+  },
+  "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "testPathIgnorePatterns": ["<rootDir>/test/supports/"]
+}
