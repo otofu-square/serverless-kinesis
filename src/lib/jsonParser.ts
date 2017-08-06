@@ -1,16 +1,31 @@
-import { APIGatewayEvent } from 'aws-lambda';
+import { APIGatewayEvent } from "aws-lambda";
+import { head, path, pipe } from "ramda";
 
-import { LineEvent, LineEventObject } from './models/line';
+import { ILineEvent, ILineEventObject } from "../models/line";
 
-interface Params {
+interface IParams {
   userId: string;
   type: string;
 }
 
-export const extractUserId = (event: APIGatewayEvent) =>
-  JSON.parse(event.body as string).events[0].source.userId;
+export const extractLineEvent: (_: APIGatewayEvent) => any = pipe(
+  path(["body"]),
+  JSON.parse,
+  path(["events"]),
+  head,
+);
 
-export const extractParams = (lineEventObject: LineEventObject): Params => ({
-  userId: lineEventObject.events[0].source.userId,
-  type: lineEventObject.events[0].type,
+export const extractUserId: (_: APIGatewayEvent) => string = pipe(
+  extractLineEvent,
+  path(["source", "userId"]),
+);
+
+export const extractType: (_: APIGatewayEvent) => string = pipe(
+  extractLineEvent,
+  path(["type"]),
+);
+
+export const extractParams = (event: APIGatewayEvent) => ({
+  userId: extractUserId(event),
+  type: extractType(event),
 });
