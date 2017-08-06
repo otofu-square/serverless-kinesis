@@ -4,7 +4,8 @@
   "repository": "ssh://git@github.com/otofu-square/serverless-kinesis.git",
   "license": "MIT",
   "scripts": {
-    "build": "tsc --outDir .build"
+    "build": "tsc --outDir .build",
+    "test": "jest"
   },
   "devDependencies": {
     "@line/bot-sdk": "^2.0.0",
