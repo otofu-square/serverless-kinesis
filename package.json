@@ -18,6 +18,6 @@
     "tslint-config-prettier": "^1.6.0"
   },
   "dependencies": {
-    "ramda": "^0.24.1"
+    "ramda": "^0.25.0"
   }
 }
