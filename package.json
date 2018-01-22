@@ -8,14 +8,19 @@
   },
   "devDependencies": {
     "@line/bot-sdk": "5.2.0",
-    "@types/aws-lambda": "0.0.21",
+    "@types/aws-lambda": "0.0.27",
     "@types/node": "9.3.0",
     "@types/ramda": "0.25.16",
+    "awesome-typescript-loader": "^3.4.1",
     "aws-sdk": "2.185.0",
     "serverless": "1.25.0",
     "serverless-plugin-typescript": "1.1.5",
+    "serverless-webpack": "^4.2.0",
     "tslint": "5.9.1",
-    "tslint-config-prettier": "1.6.0"
+    "tslint-config-prettier": "1.6.0",
+    "typescript": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0"
   },
   "dependencies": {
     "ramda": "0.25.0"
