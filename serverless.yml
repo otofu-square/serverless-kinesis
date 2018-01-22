@@ -62,4 +62,4 @@ functions:
 resources: ${file(resources.yml)}
 
 plugins:
-  - serverless-plugin-typescript
+  - serverless-webpack
