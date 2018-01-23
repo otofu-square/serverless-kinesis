@@ -1,28 +1,28 @@
+import { WebhookEvent } from "@line/bot-sdk";
 import { APIGatewayEvent } from "aws-lambda";
-import { head, path, pipe } from "ramda";
-
-import { ILineEvent, ILineEventObject } from "../models/line";
+import { head, pathOr, pipe } from "ramda";
 
 interface IParams {
   userId: string;
   type: string;
 }
 
-export const extractLineEvent: (_: APIGatewayEvent) => any = pipe(
-  path(["body"]),
-  JSON.parse,
-  path(["events"]),
-  head,
+export const extractLineEvent = pipe<
+  APIGatewayEvent,
+  string,
+  APIGatewayEvent["body"],
+  WebhookEvent[],
+  WebhookEvent
+>(pathOr("", ["body"]), JSON.parse, pathOr("", ["events"]), head);
+
+export const extractUserId = pipe<APIGatewayEvent, WebhookEvent, string>(
+  extractLineEvent,
+  pathOr("", ["source", "userId"]),
 );
 
-export const extractUserId: (_: APIGatewayEvent) => string = pipe(
+export const extractType = pipe<APIGatewayEvent, WebhookEvent, string>(
   extractLineEvent,
-  path(["source", "userId"]),
-);
-
-export const extractType: (_: APIGatewayEvent) => string = pipe(
-  extractLineEvent,
-  path(["type"]),
+  pathOr("", ["type"]),
 );
 
 export const extractParams = (event: APIGatewayEvent) => ({
