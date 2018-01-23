@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "moduleResolution": "node",
-    "lib": ["es2015"],
+    "lib": ["es2015", "esnext"],
     "rootDir": "./",
     "strict": true,
     "preserveConstEnums": true,
