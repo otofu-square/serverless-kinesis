@@ -21,9 +21,9 @@
     ramda "^0.24.1"
     url-parse "^1.1.9"
 
-"@types/aws-lambda@0.0.27":
-  version "0.0.27"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-0.0.27.tgz#11bba7b856a6ba3f0c7b679956371e6315cd029c"
+"@types/aws-lambda@0.0.29":
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-0.0.29.tgz#b8eb473be15d43822db2477b2930abf12fb55eef"
 
 "@types/body-parser@*", "@types/body-parser@^1.16.8":
   version "1.16.8"
