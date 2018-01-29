@@ -13,7 +13,7 @@
     "@types/ramda": "0.25.16",
     "awesome-typescript-loader": "3.4.1",
     "aws-sdk": "2.188.0",
-    "serverless": "1.25.0",
+    "serverless": "1.26.0",
     "serverless-webpack": "4.2.0",
     "tslint": "5.9.1",
     "tslint-config-prettier": "1.6.0",
