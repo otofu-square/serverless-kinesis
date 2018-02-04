@@ -21,9 +21,9 @@
     ramda "^0.24.1"
     url-parse "^1.1.9"
 
-"@types/aws-lambda@0.0.30":
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-0.0.30.tgz#3944949f39453fd690bebf0b41a81ad031bb4af2"
+"@types/aws-lambda@0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-0.0.31.tgz#174d763bd801bc9106eaf40263fd78d8c300d950"
 
 "@types/body-parser@*", "@types/body-parser@^1.16.8":
   version "1.16.8"
@@ -64,17 +64,17 @@
   version "8.0.53"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.53.tgz#396b35af826fa66aad472c8cb7b8d5e277f4e6d8"
 
-"@types/node@9.3.0":
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.3.0.tgz#3a129cda7c4e5df2409702626892cb4b96546dd5"
+"@types/node@9.4.0":
+  version "9.4.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.0.tgz#b85a0bcf1e1cc84eb4901b7e96966aedc6f078d1"
 
 "@types/node@^7.0.31":
   version "7.0.48"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.48.tgz#24bfdc0aa82e8f6dbd017159c58094a2e06d0abb"
 
-"@types/ramda@0.25.16":
-  version "0.25.16"
-  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.25.16.tgz#1d4eeb78d3247d1ceef971b458dd8469646cd1b4"
+"@types/ramda@0.25.17":
+  version "0.25.17"
+  resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.25.17.tgz#2879779be272ba265415baf4cc3299a1f00e1955"
 
 "@types/serve-static@*":
   version "1.13.1"
@@ -1446,6 +1446,10 @@ fast-deep-equal@^1.0.0:
 fast-json-stable-stringify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/fast-json-stable-stringify/-/fast-json-stable-stringify-2.0.0.tgz#d5142c0caee6b1189f87d3a76111064f86c8bbf2"
+
+fast-levenshtein@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
 fd-slicer@~1.0.1:
   version "1.0.1"
@@ -3424,9 +3428,9 @@ serverless-webpack@4.2.0:
     semver "^5.4.1"
     ts-node "^3.2.0"
 
-serverless@1.25.0:
-  version "1.25.0"
-  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.25.0.tgz#23922d6514fcd9217d2740a52ba17c696734fb23"
+serverless@1.26.0:
+  version "1.26.0"
+  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.26.0.tgz#cd46345a25d9fdd6c7a9c1da95251de39053ddae"
   dependencies:
     "@serverless/fdk" "^0.5.1"
     apollo-client "^1.9.2"
@@ -3437,6 +3441,7 @@ serverless@1.25.0:
     chalk "^2.0.0"
     ci-info "^1.1.1"
     download "^5.0.2"
+    fast-levenshtein "^2.0.6"
     filesize "^3.3.0"
     fs-extra "^0.26.7"
     get-stdin "^5.0.1"
@@ -3982,9 +3987,9 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typescript@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
+typescript@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.1.tgz#bb3682c2c791ac90e7c6210b26478a8da085c359"
 
 uglify-es@^3.3.4:
   version "3.3.8"
@@ -4006,9 +4011,9 @@ uglify-to-browserify@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz#6e0924d6bda6b5afe349e39a6d632850a0f882b7"
 
-uglifyjs-webpack-plugin@1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.1.6.tgz#f4ba8449edcf17835c18ba6ae99b9d610857fb19"
+uglifyjs-webpack-plugin@1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.1.8.tgz#1302fb9471a7daf3d0a5174da6d65f0f415e75ad"
   dependencies:
     cacache "^10.0.1"
     find-cache-dir "^1.0.0"
