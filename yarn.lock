@@ -3415,9 +3415,9 @@ serialize-javascript@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-1.4.0.tgz#7c958514db6ac2443a8abc062dc9f7886a7f6005"
 
-serverless-webpack@4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-4.2.0.tgz#33707dd429a32e05fa5056b57930b90f2d5e9090"
+serverless-webpack@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/serverless-webpack/-/serverless-webpack-4.3.0.tgz#6fd662d9a9e8a0ab1d5f08ce911b21080c4cb9c7"
   dependencies:
     archiver "^2.0.0"
     bluebird "^3.5.0"
