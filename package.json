@@ -14,7 +14,7 @@
     "awesome-typescript-loader": "3.4.1",
     "aws-sdk": "2.188.0",
     "serverless": "1.26.0",
-    "serverless-webpack": "4.2.0",
+    "serverless-webpack": "4.3.0",
     "tslint": "5.9.1",
     "tslint-config-prettier": "1.7.0",
     "typescript": "2.7.1",
