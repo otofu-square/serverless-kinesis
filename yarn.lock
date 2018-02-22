@@ -357,9 +357,9 @@ awesome-typescript-loader@3.4.1:
     object-assign "^4.1.1"
     source-map-support "^0.4.15"
 
-aws-sdk@2.191.0:
-  version "2.191.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.191.0.tgz#f6e7d0e952b43110702c126f6747b8ec66553da5"
+aws-sdk@2.200.0:
+  version "2.200.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.200.0.tgz#f460c96408725b0eb8c658fddea6e0bfe0ef5a44"
   dependencies:
     buffer "4.9.1"
     events "^1.1.1"
