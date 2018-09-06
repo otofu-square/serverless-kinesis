@@ -11,7 +11,7 @@
     "@types/aws-lambda": "0.0.32",
     "@types/node": "9.4.6",
     "@types/ramda": "0.25.18",
-    "awesome-typescript-loader": "3.5.0",
+    "awesome-typescript-loader": "5.2.1",
     "aws-sdk": "2.202.0",
     "serverless": "1.26.0",
     "serverless-webpack": "4.3.0",
