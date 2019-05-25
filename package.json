@@ -7,7 +7,7 @@
     "build": "tsc --outDir .build"
   },
   "devDependencies": {
-    "@line/bot-sdk": "5.2.0",
+    "@line/bot-sdk": "6.7.1",
     "@types/aws-lambda": "0.0.32",
     "@types/node": "9.4.6",
     "@types/ramda": "0.25.18",

@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@line/bot-sdk@5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@line/bot-sdk/-/bot-sdk-5.2.0.tgz#81c7eb01baabd50235190ba20fc2daece9e3b18a"
+"@line/bot-sdk@6.7.1":
+  version "6.7.1"
+  resolved "https://registry.yarnpkg.com/@line/bot-sdk/-/bot-sdk-6.7.1.tgz#b8ad09aa7f955389973aa65789a763d8d6960f5a"
   dependencies:
     "@types/body-parser" "^1.16.8"
     "@types/file-type" "^5.2.1"
