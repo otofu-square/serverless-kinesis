@@ -10,7 +10,7 @@
     "@line/bot-sdk": "5.2.0",
     "@types/aws-lambda": "0.0.32",
     "@types/node": "9.4.6",
-    "@types/ramda": "0.25.18",
+    "@types/ramda": "0.26.9",
     "awesome-typescript-loader": "3.5.0",
     "aws-sdk": "2.202.0",
     "serverless": "1.26.0",
@@ -22,6 +22,6 @@
     "webpack": "3.11.0"
   },
   "dependencies": {
-    "ramda": "0.25.0"
+    "ramda": "0.26.1"
   }
 }
