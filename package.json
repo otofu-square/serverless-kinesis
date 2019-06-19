@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@line/bot-sdk": "5.2.0",
-    "@types/aws-lambda": "0.0.32",
+    "@types/aws-lambda": "8.10.27",
     "@types/node": "9.4.6",
     "@types/ramda": "0.25.18",
     "awesome-typescript-loader": "3.5.0",
